@@ -1,38 +1,205 @@
-.App {
+* {
+  margin : 0;
+  padding : 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-image: url('./images/bg-pattern-desktop.svg');
+  font-family: 'Josefin Sans',sans-serif;
+}
+
+.mainContainer {
+  display : flex;
+  flex-direction : column;
+  width : 360px;
+}
+
+.header {
+  padding-inline : 1em;
+  display : flex;
+  margin-top : 1em;
+}
+
+.headerTitle > p {
+  font-weight : 700;
+  width : 1em;
+  letter-spacing: 2px;
+  font-size : 11px;
+}
+
+.circle {
+  width : 20px;
+  height : 20px;
+  border-radius : 50%;
+  border : 2px solid hsl(0, 36%, 70%);
+  position : relative; 
+  top : 3px;
+  margin-right : 5px;
+}
+
+.imageHero {
+  margin-top : 1em;
+  background-image: url('./images/hero-mobile.jpg');
+  background-repeat: no-repeat;
+  height : 250px;
+  width : 360px;
+}
+
+@media screen and (min-width : 1400px) {
+  .imageHero{
+    position : relative;
+    left : 14em;
+    margin-top: 0em;
+    margin : 0;
+    background-image: url('./images/hero-desktop.jpg');
+    height : 43.6em;
+    width : 70em;
+  }
+}
+
+
+.midContainer {
+  margin-top : 2em;
+}
+
+.midContainer > div > h1 {
+  text-align: left;
+  padding-inline : 1.5em;
+  letter-spacing: 10px;
+  color : hsl(0, 6%, 24%);
+}
+
+.midContainer > div > h1 > span {
+  color : hsl(0, 93%, 68%);
+  font-weight: 300;
+
+}
+
+.midContainer > div > p {
+  margin-top : .5em;
+  text-align: center;
+  padding-inline : .8em;
+  padding-top : .5em;
+  color : hsl(0, 36%, 70%);
+  line-height : 1.3em;
+}
+
+.formContainer {
+  padding-inline : 1em;
+  margin-top : 1em;
+}
+
+input {
+  padding-block : 1em;
+  border-radius : 20px;
+  border : 1px solid hsl(0, 36%, 70%);
+  width : 300px;
+  padding-left : 1.5em;
+}
+
+input::placeholder {
+  padding-block : .8em;
+  padding-inline : .5em;
+}
+
+button {
+  padding : .8em;
+  border-radius : 30px;
+  background-image : linear-gradient(135deg,hsl(0, 80%, 86%),hsl(0, 74%, 74%));
+  border : none;
+  position : relative;
+  left : 19em;
+  bottom : 3.3em;
+}
+
+button:hover {
+  background-image : linear-gradient(135deg, hsl(0, 0%, 100%),  hsl(0, 100%, 80%))
+}
+
+button > img {
+  padding-inline : 1em;
+}
+
+.errorIcon {
+  position : absolute;
+  bottom : 3.6em;
+  left : 15em; 
+}
+
+.errorWarning {
+  color : hsl(0, 93%, 68%);
+  position : relative;
+  bottom : 2.5em;
+  left : 1em;
+  font-size: 13px;
+}
+
+.attribution {
+  font-size: 11px; 
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.attribution a {
+  color: hsl(228, 45%, 44%);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+@media screen and (min-width : 1400px) {
+  body {
+    overflow: hidden;
   }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+  .mainContainer {
+    flex-direction: row-reverse;
+    min-width : 1400px; 
   }
-  to {
-    transform: rotate(360deg);
+  .header {
+    position: relative;
+    right : 78em;
+    top : 5em;
+  }
+  .header > .circle {
+    width : 30px;
+    height : 30px;
+  }
+
+  .headerTitle > p {
+    font-size : 15px;
+  }
+
+  .midContainer {
+    padding-top : 15em;
+  }
+
+  .midContainer > div > h1 {
+    padding-right : 7em;
+    text-align: left;
+    font-size: 60px;
+  }
+  .midContainer > div > p {
+    padding-inline : 6em 20em;
+    text-align: left;
+    line-height: 1.5em;
+  }
+  input {
+    width : 400px;
+    padding-left : 1.5em;
+    margin-left: 5.5em;
+  }
+  button {
+    border : none;
+    position : relative;
+    left : -2.5em;
+    bottom : -.3em;
+  }
+  button > img {
+    padding-inline : 2em;
+  }
+  .errorIcon {
+    bottom : 6em;
+    left : 26em; 
+  }
+  .errorWarning {
+    bottom : -1em;
+    left : 6em;
   }
 }
